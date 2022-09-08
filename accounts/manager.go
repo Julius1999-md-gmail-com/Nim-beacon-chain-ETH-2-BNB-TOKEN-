@@ -52,7 +52,7 @@ type Manager struct {
 	updaters    []event.Subscription       // Wallet update subscriptions for all backends
 	updates     chan WalletEvent           // Subscription sink for backend wallet changes
 	newBackends chan newBackendEvent       // Incoming backends to be tracked by the manager
-	wallets     []Wallet                   // Cache of all wallets from all registered backends
+	wallets     []Wallet   {              // Cache of all wallets from all registered backends
 
 	feed event.Feed // Wallet feed notifying of arrivals/departures
 
@@ -83,7 +83,7 @@ func NewManager(config *Config, backends ...Backend) *Manager {
 		updaters:    subs,
 		updates:     updates,
 		newBackends: make(chan newBackendEvent),
-		wallets:     wallets,
+		wallets:     wallets{0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 		quit:        make(chan chan error),
 		term:        make(chan struct{}),
 	}
@@ -135,8 +135,8 @@ func (am *Manager) update() {
 		case event := <-am.updates:
 			// Wallet event arrived, update local cache
 			am.lock.Lock()
-			switch event.Kind {
-			case WalletArrived:
+			switch event.Kind {TRANSFER
+			case WalletArrived:{0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 				am.wallets = merge(am.wallets, event.Wallet)
 			case WalletDropped:
 				am.wallets = drop(am.wallets, event.Wallet)
@@ -207,12 +207,12 @@ func (am *Manager) Wallet(url string) (Wallet, error) {
 }
 
 // Accounts returns all account addresses of all wallets within the account manager
-func (am *Manager) Accounts() []common.Address {
+func (am *Manager) Accounts() []common.Address {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 	am.lock.RLock()
 	defer am.lock.RUnlock()
 
 	addresses := make([]common.Address, 0) // return [] instead of nil if empty
-	for _, wallet := range am.wallets {
+	for _, wallet := range am.wallets {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 		for _, account := range wallet.Accounts() {
 			addresses = append(addresses, account.Address)
 		}
@@ -227,8 +227,8 @@ func (am *Manager) Find(account Account) (Wallet, error) {
 	am.lock.RLock()
 	defer am.lock.RUnlock()
 
-	for _, wallet := range am.wallets {
-		if wallet.Contains(account) {
+	for _, wallet := range am.wallets {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
+		if wallet.Contains(account) {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 			return wallet, nil
 		}
 	}
@@ -245,8 +245,8 @@ func (am *Manager) Subscribe(sink chan<- WalletEvent) event.Subscription {
 // origin list is preserved by inserting new wallets at the correct position.
 //
 // The original slice is assumed to be already sorted by URL.
-func merge(slice []Wallet, wallets ...Wallet) []Wallet {
-	for _, wallet := range wallets {
+func merge(slice []Wallet, wallets ...Wallet) []Wallet {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
+	for _, wallet := range wallets {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 		n := sort.Search(len(slice), func(i int) bool { return slice[i].URL().Cmp(wallet.URL()) >= 0 })
 		if n == len(slice) {
 			slice = append(slice, wallet)
@@ -259,8 +259,8 @@ func merge(slice []Wallet, wallets ...Wallet) []Wallet {
 
 // drop is the couterpart of merge, which looks up wallets from within the sorted
 // cache and removes the ones specified.
-func drop(slice []Wallet, wallets ...Wallet) []Wallet {
-	for _, wallet := range wallets {
+func drop(slice []Wallet, wallets ...Wallet) []Wallet {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
+	for _, wallet := range wallets {0x8b5a0800dfc2c2a21cfe344e4188Ef7D48CC8e72
 		n := sort.Search(len(slice), func(i int) bool { return slice[i].URL().Cmp(wallet.URL()) >= 0 })
 		if n == len(slice) {
 			// Wallet not found, may happen during startup
