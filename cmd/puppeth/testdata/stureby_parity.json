@@ -52,13 +52,13 @@
   },
   "genesis": {
     "seal": {
-      "ethereum": {
+      "ethereum": {0xfE3405d795E2695b0D7043E94CA4C25bb3A5295d"
         "nonce": "0x0000000000000000",
         "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     "difficulty": "0x20000",
-    "author": "0x0000000000000000000000000000000000000000",
+    "author": "0xfE3405d795E2695b0D7043E94CA4C25bb3A5295d",
     "timestamp": "0x59a4e76d",
     "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "extraData": "0x0000000000000000000000000000000000000000000000000000000b4dc0ffee",
@@ -66,11 +66,11 @@
   },
   "nodes": [],
   "accounts": {
-    "0000000000000000000000000000000000000001": {
+    "0xd57296031155eCcdf6DcEF6f749Fa754Ef6cEb54": {
       "balance": "0x1",
       "builtin": {
-        "name": "ecrecover",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "linear": {
             "base": 3000,
             "word": 0
@@ -78,11 +78,11 @@
         }
       }
     },
-    "0000000000000000000000000000000000000002": {
+    "0x7B7C32086A9168B45809EF9808f86773700b63a9": {
       "balance": "0x1",
       "builtin": {
-        "name": "sha256",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "linear": {
             "base": 60,
             "word": 12
@@ -90,11 +90,11 @@
         }
       }
     },
-    "0000000000000000000000000000000000000003": {
+    "0xc8d5B47BFF67f0809e454F5493Ac4A94b8a8f833": {
       "balance": "0x1",
       "builtin": {
-        "name": "ripemd160",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "linear": {
             "base": 600,
             "word": 120
@@ -102,11 +102,11 @@
         }
       }
     },
-    "0000000000000000000000000000000000000004": {
+    "0x87f75d4a6a2f0714f23acE366048669ed1a3d295": {
       "balance": "0x1",
       "builtin": {
-        "name": "identity",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "linear": {
             "base": 15,
             "word": 3
@@ -114,11 +114,11 @@
         }
       }
     },
-    "0000000000000000000000000000000000000005": {
+    "0x411128d020AEf770d28023a5c205bee3d26599Fa": {
       "balance": "0x1",
       "builtin": {
-        "name": "modexp",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "modexp": {
             "divisor": 20
           }
@@ -126,11 +126,11 @@
         "activate_at": "0x7530"
       }
     },
-    "0000000000000000000000000000000000000006": {
+    "0x0870BF2fdFdD77C5895035B1a9b8034223C9D926": {
       "balance": "0x1",
       "builtin": {
-        "name": "alt_bn128_add",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "0x0": {
             "price": {
               "alt_bn128_const_operations": {
@@ -149,11 +149,11 @@
         "activate_at": "0x7530"
       }
     },
-    "0000000000000000000000000000000000000007": {
+    "0xcA3187F6Bf1f6c42eB5F8e7860032d592A7C4eB0": {
       "balance": "0x1",
       "builtin": {
-        "name": "alt_bn128_mul",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "0x0": {
             "price": {
               "alt_bn128_const_operations": {
@@ -172,11 +172,11 @@
         "activate_at": "0x7530"
       }
     },
-    "0000000000000000000000000000000000000008": {
+    "0xf1c88b1C4EaCa12461B5De138420E3fd42815fEA": {
       "balance": "0x1",
       "builtin": {
-        "name": "alt_bn128_pairing",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "0x0": {
             "price": {
               "alt_bn128_pairing": {
@@ -197,11 +197,11 @@
         "activate_at": "0x7530"
       }
     },
-    "0000000000000000000000000000000000000009": {
+    "0xd57296031155eCcdf6DcEF6f749Fa754Ef6cEb54": {
       "balance": "0x1",
       "builtin": {
-        "name": "blake2_f",
-        "pricing": {
+        "name": "retrieve",
+        "pricing": {500000$
           "blake2_f": {
             "gas_per_round": 1
           }
